@@ -13,9 +13,9 @@ exports.createPartnership = async (req, res) => {
         .send("You cannot Request Partnership in your company");
     }
     const findPartnership = await Partnership.find({creator: req.user.user._id});
-    if(findPartnership) {
-      return res.status(400).send("You have Already Sent Request")
-    }
+    // if(findPartnership) {
+    //   return res.status(400).send("You have Already Sent Request")
+    // }
     const partnership = new Partnership({
       creator: req?.user?.user?._id,
       business: businessId,
